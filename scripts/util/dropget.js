@@ -1,4 +1,4 @@
-import { florr } from "https://fringed-iris.github.io/wiki/scripts/data.js";
+import { florr } from "https://hidehidev7.github.io/wiki/scripts/data.js";
 window.florr = florr;
 
 export default function (baseChance) {

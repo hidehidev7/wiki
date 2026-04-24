@@ -1,5 +1,5 @@
 //wikiのdropcode_jsonのページに自動生成したコードを表示する
-import dropGetFunc from "https://fringed-iris.github.io/wiki/scripts/util/dropget.js";
+import dropGetFunc from "https://hidehidev7.github.io/wiki/scripts/util/dropget.js";
 
 export function main() {
     const targetPageName = "dropcode_json";

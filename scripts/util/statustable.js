@@ -7,7 +7,7 @@ ver 4.3
 
 "use strict";
 
-import { florr } from "https://fringed-iris.github.io/wiki/scripts/data.js";
+import { florr } from "https://hidehidev7.github.io/wiki/scripts/data.js";
 window.florr = florr;
 
 const DEFAULT_TOFIXED_NUM = 1;

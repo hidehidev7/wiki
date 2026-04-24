@@ -7,7 +7,7 @@ florr.io JPwiki 総合管理システム
 ----------------------------------------------- */
 
 
-import { florr } from "https://fringed-iris.github.io/wiki/scripts/data.js"
+import { florr } from "https://hidehidev7.github.io/wiki/scripts/data.js"
 
 
 window.florr = florr;
@@ -69,7 +69,7 @@ const runScript = (o = {}) => {
     if (o.property.url) {
         data.url = o.property.url
     } else {
-        data.url = `https://fringed-iris.github.io/wiki/scripts/${o.type}/${o.funcName}.js`;
+        data.url = `https://hidehidev7.github.io/wiki/scripts/${o.type}/${o.funcName}.js`;
     }
 
     if (o.property.arg.options) data.arg.options = getArg(o.text, o.property.arg.options);
@@ -126,7 +126,7 @@ const load = (json, type) => {
 
 const CONFIG = await (async () => {
     try {
-        const REQ = await fetch("https://fringed-iris.github.io/wiki/scripts/config.json")
+        const REQ = await fetch("https://hidehidev7.github.io/wiki/scripts/config.json")
         const RES = await REQ.json();
 
         console.log("config.jsonが読み込まれました。", RES);
