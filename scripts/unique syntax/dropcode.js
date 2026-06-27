@@ -3,6 +3,8 @@
 import { createStatusTable, insertTableBeforeOriginId, calcBoolRarities } from "../util/statustable.js";
 import { convertPetalIntoImageName, convertMobIntoImageName } from "../util/valuecontrol.js";
 
+const MAX_RARITY_TO_CALCULATE = 8;
+
 /** 好きなページの好きなidの要素を返す（Promise）*/
 async function getElementFromPageAndId(page, id) {
     const url = "https://" + location.host + "/wiki/" + page;
@@ -140,7 +142,7 @@ function calcFieldColumnOptions(dropTableData, allowedRarity) {
         if (!allowedRarity[petalRId]) continue;
         const petalRName = window.florr.rarity.name[window.florr.rarity.id[petalRId.toString()]]; //Common, Unusual...
         const uniqueDatas = [];
-        for (let mobRId = 0; mobRId < window.florr.rarity.length; mobRId++) {
+        for (let mobRId = 0; mobRId <= MAX_RARITY_TO_CALCULATE; mobRId++) {
             uniqueDatas.push(dropTableData[mobRId][petalRId]);
         }
         fieldOptions[petalRName] = { type: "unique", uniqueDatas: uniqueDatas, };
@@ -164,7 +166,7 @@ function createDropTable(fieldOptions, columnOptionsArr, displayedRarities) {
 
 function calcFromAllowedRarities(dropTableData, allowedRarities) {
     dropTableData.forEach(e => {
-        for (let j = window.florr.rarity.length - 1; j > -1; j--) {
+        for (let j = MAX_RARITY_TO_CALCULATE; j > -1; j--) {
             if (!allowedRarities[j]) {
                 if (j !== 0) e[j - 1] += e[j];
                 e[j] = 0;

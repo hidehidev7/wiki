@@ -50,6 +50,7 @@ florr.rarity = {};
     $.id[$.id["Ul"] = 6] = "Ul";
     $.id[$.id["Sp"] = 7] = "Sp";
     $.id[$.id["Uq"] = 8] = "Uq";
+    $.id[$.id["Et"] = 9] = "Et";
 
     //レアリティID　←→　レアリティ名
     $.name = {};
@@ -62,6 +63,7 @@ florr.rarity = {};
     $.name[$.name["Ultra"] = "Ul"] = "Ultra";
     $.name[$.name["Super"] = "Sp"] = "Super";
     $.name[$.name["Unique"] = "Uq"] = "Unique";
+    $.name[$.name["Eternal"] = "Et"] = "Eternal";
 
     //レアリティID　→　レアリティ色
     $.color = {
@@ -76,6 +78,7 @@ florr.rarity = {};
             [$.id[6]]: "#ff2b75",
             [$.id[7]]: "#2bffa3",
             [$.id[8]]: "#555555",
+            [$.id[9]]: "#dddddd",
         },
         text: {
             [$.id[0]]: "#000",
@@ -87,6 +90,7 @@ florr.rarity = {};
             [$.id[6]]: "#fff",
             [$.id[7]]: "#000",
             [$.id[8]]: "#fff",
+            [$.id[9]]: "#000",
         }
     }
 })(florr.rarity);
@@ -122,14 +126,14 @@ florr.database = {//ペタル、モブ関連のデータ
     },
     //選択可能なTalentの獲得レアリティ
     talentRarity: {
-        reload: [0, 1, 2, 3, 4, 5, 6, 7, 8],
-        medic: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        reload: [0, 1, 2, 3, 4, 5, 6, 7, 9],
+        medic: [0, 1, 2, 3, 4, 5, 6, 7, 9],
         duplicator: [0, 4, 6],
         poison: [0, 1, 2, 2, 2, 2, 2, 2, 2],
         CPoison: [7],
-        summoner: [0, 1, 2, 3, 4, 5, 6, 7, 8],
-        luck: [0, 1, 2, 3, 4, 5, 6, 7, 8],
-        pHealth: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        summoner: [0, 1, 2, 3, 4, 5, 6, 7, 9],
+        luck: [0, 1, 2, 3, 4, 5, 6, 7, 9],
+        pHealth: [0, 1, 2, 3, 4, 5, 6, 7, 9],
     },
     talentName: {
         JP: {

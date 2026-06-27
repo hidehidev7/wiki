@@ -11,6 +11,7 @@ import { florr } from "https://hidehidev7.github.io/wiki/scripts/data.js";
 window.florr = florr;
 
 const DEFAULT_TOFIXED_NUM = 1;
+const MAX_RARITY_TO_CALCULATE = 8;
 
 export const TALENTS_VAL = window.florr.database.talentFactor; //各タレントの効果（累積）
 
@@ -21,9 +22,9 @@ export const TALENTS_FACTOR_DEFAULT = window.florr.database.talentOriginalValue;
 //後方互換性を死守すること
 //options.magnification ... numberまたはレアリティの長さのarrayで指定可。各レアリティ間の倍率を一定またはレアリティごとに指定することができる。
 const calcAbilityPro = (baseAbility, options = {}) => {
-    const LIST = new Array(window.florr.rarity.length);
+    const LIST = new Array(MAX_RARITY_TO_CALCULATE + 1);
 
-    for (let id = 0; id < window.florr.rarity.length; id++) {
+    for (let id = 0; id <= MAX_RARITY_TO_CALCULATE; id++) {
         const FACTOR = (() => {
             const mag = options.magnification;
             switch (typeof mag) {
@@ -65,9 +66,9 @@ const calcManaUse = baseAbility => {
 
 const calcMobHealth = baseAbility => {
 
-    const TABLE = new Array(window.florr.rarity.length);
+    const TABLE = new Array(MAX_RARITY_TO_CALCULATE + 1);
 
-    for (let id = 0; id <= (window.florr.rarity.length - 1); id++) {
+    for (let id = 0; id <= MAX_RARITY_TO_CALCULATE; id++) {
         let factor = window.florr.database.mobHealthFactor[id];
 
         const AMOUNT = (baseAbility * factor);
@@ -111,7 +112,7 @@ const calcDPSRange = (options, rarity) => {
 }
 
 /** leastRarityとmaxRarityから配列を計算。leastとmaxの補完はなし */
-export function calcBoolRarities(leastRarity, maxRarity, length = window.florr.rarity.length) {
+export function calcBoolRarities(leastRarity, maxRarity, length = MAX_RARITY_TO_CALCULATE + 1) {
     const arr = [];
     for (let i = 0; i < length; i++) arr.push((leastRarity <= i) && (i <= maxRarity));
     return arr;
@@ -206,7 +207,7 @@ const Field = class {
                         return calcManaUse(correctToNum(this.base));
                     case "constant":
                         let arr = [];
-                        for (let i = 0; i < window.florr.rarity.length; i++) {
+                        for (let i = 0; i <= MAX_RARITY_TO_CALCULATE; i++) {
                             arr.push(correctToNum(this.base + i * this.increase));
                         }
                         return arr;
@@ -519,7 +520,13 @@ export const PulldownMenufyHost = class {
             value: 8,
             color: window.florr.rarity.color.text["Uq"],
             backgroundColor: window.florr.rarity.color.background["Uq"]
-        }
+        },
+        {
+            label: "Eternal",
+            value: 9,
+            color: window.florr.rarity.color.text["Et"],
+            backgroundColor: window.florr.rarity.color.background["Et"]
+        },
     ]
 
     createPullDownMenu = (options = []) => {//プルダウンメニュー用の要素を作成
@@ -686,7 +693,7 @@ export const createStatusTable = function (fieldOptions, columnOptionsArr, statu
     }
 
     //cell生成、Columnに登録
-    for (let rID = -1; rID < window.florr.rarity.length; rID++) {
+    for (let rID = -1; rID <= MAX_RARITY_TO_CALCULATE; rID++) {
         const TR = TBODY.insertRow();
         for (let j = 0; j < columnArr.length; j++) {
             if (rID === -1) {
