@@ -12,33 +12,10 @@ window.florr = florr;
 
 const DEFAULT_TOFIXED_NUM = 1;
 
-export const Talents = class {
-
-    constructor(reload, medic, duplicator, poison, CPoison) {
-        this.reload = reload;
-        this.medic = medic;
-        this.duplicator = duplicator;
-        this.poison = poison;
-        this.CPoison = CPoison;
-    }
-}
-
-export const TALENTS_VAL = new Talents(//各タレントの効果（累積）
-    window.florr.database.talentFactor.reload,
-    window.florr.database.talentFactor.medic,
-    window.florr.database.talentFactor.duplicator,
-    window.florr.database.talentFactor.poison,
-    window.florr.database.talentFactor.CPoison,
-);
+export const TALENTS_VAL = window.florr.database.talentFactor; //各タレントの効果（累積）
 
 //TALENTS_FACTORのデフォ値。これ＋TALENTS_VALがTALENTS_FACTORの値になる
-export const TALENTS_FACTOR_DEFAULT = new Talents(
-    window.florr.database.talentOriginalValue.reload,
-    window.florr.database.talentOriginalValue.medic,
-    window.florr.database.talentOriginalValue.duplicator,
-    window.florr.database.talentOriginalValue.poison,
-    window.florr.database.talentOriginalValue.CPoison,
-);
+export const TALENTS_FACTOR_DEFAULT = window.florr.database.talentOriginalValue;
 
 //optionsは完全な任意指定であり、optionsを指定しない場合元のcalcAbilityと同じ挙動をする
 //後方互換性を死守すること

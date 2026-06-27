@@ -2,7 +2,7 @@
 petalcode (statustable ver4.3)
 ---------- */
 
-import { createStatusTable, PulldownMenufyHost, Talents, TALENTS_FACTOR_DEFAULT, TALENTS_VAL, insertTableBeforeOriginId } from "./../util/statustable.js"
+import { createStatusTable, PulldownMenufyHost, TALENTS_FACTOR_DEFAULT, TALENTS_VAL, insertTableBeforeOriginId } from "./../util/statustable.js"
 
 //specialStatusのオプションを、fieldとcolumnに振り分ける。補完は行わない
 const convertSpecialStatusInto = function (options) {
@@ -52,13 +52,7 @@ const convertSpecialStatusInto = function (options) {
 
 export const main = ($) => {
 
-    const TALENTS_FACTOR = new Talents(
-        TALENTS_FACTOR_DEFAULT.reload,
-        TALENTS_FACTOR_DEFAULT.medic,
-        TALENTS_FACTOR_DEFAULT.duplicator,
-        TALENTS_FACTOR_DEFAULT.poison,
-        TALENTS_FACTOR_DEFAULT.CPoison,
-    )
+    const TALENTS_FACTOR = { ...TALENTS_FACTOR_DEFAULT };
 
     const finalFieldOptions = {};
     const finalColumnOptionsArr = [];
