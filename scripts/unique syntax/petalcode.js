@@ -183,6 +183,7 @@ export const main = ($) => {
         $.options.fieldOptions["healthSum"] ??= {
             "type": "normal",
             "base": $.options.baseHealth ?? 0,
+            "relatedTalent": "pHealth",
         };
 
         //体力
@@ -360,7 +361,7 @@ export const main = ($) => {
         const createPullDownMenu = host.createPullDownMenu;
         const pulldownMenufy = host.pulldownMenufy;
 
-        const talentsToCreate = ["reload", "medic", "duplicator", "poison", "CPoison"];
+        const talentsToCreate = ["reload", "medic", "duplicator", "poison", "CPoison", "summoner", "luck", "pHealth"];
 
         const pullDownMenu = talentsToCreate.map(talent => {
             const rarities = window.florr.database.talentRarity[talent];
