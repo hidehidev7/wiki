@@ -360,57 +360,13 @@ export const main = ($) => {
         const createPullDownMenu = host.createPullDownMenu;
         const pulldownMenufy = host.pulldownMenufy;
 
+        const talentsToCreate = ["reload", "medic", "duplicator", "poison", "CPoison"];
 
-        const RELOAD = createPullDownMenu([
-            DEFAULT_LABEL_NONE,
-            DEFAULT_LABEL[0],
-            DEFAULT_LABEL[1],
-            DEFAULT_LABEL[2],
-            DEFAULT_LABEL[3],
-            DEFAULT_LABEL[4],
-            DEFAULT_LABEL[5],
-            DEFAULT_LABEL[6],
-            DEFAULT_LABEL[7],
-            DEFAULT_LABEL[8],
-
-        ]);
-        const MEDIC = createPullDownMenu([
-            DEFAULT_LABEL_NONE,
-            DEFAULT_LABEL[0],
-            DEFAULT_LABEL[1],
-            DEFAULT_LABEL[2],
-            DEFAULT_LABEL[3],
-            DEFAULT_LABEL[4],
-            DEFAULT_LABEL[5],
-            DEFAULT_LABEL[6],
-            DEFAULT_LABEL[7],
-            DEFAULT_LABEL[8],
-        ]);
-
-        const DUPLICATOR = createPullDownMenu([
-            DEFAULT_LABEL_NONE,
-            DEFAULT_LABEL[4],
-            DEFAULT_LABEL[6],
-            DEFAULT_LABEL[7],
-        ]);
-
-        const POISON = createPullDownMenu([
-            DEFAULT_LABEL_NONE,
-            DEFAULT_LABEL[0],
-            DEFAULT_LABEL[1],
-            DEFAULT_LABEL[2],
-            DEFAULT_LABEL[3],
-            DEFAULT_LABEL[4],
-            DEFAULT_LABEL[5],
-            DEFAULT_LABEL[6],
-            DEFAULT_LABEL[7],
-            DEFAULT_LABEL[8],
-        ]);
-
-        const CPOISON = createPullDownMenu([
-            DEFAULT_LABEL_NONE,
-            DEFAULT_LABEL[6],
-        ]);
+        const pullDownMenu = talentsToCreate.map(talent => {
+            const rarities = window.florr.database.talentRarity[talent];
+            const labels = [DEFAULT_LABEL_NONE, ...rarities.map(r => DEFAULT_LABEL[r])];
+            return createPullDownMenu(labels);
+        });
 
         {//見出し
             const H5 = document.createElement("h5");
@@ -420,52 +376,16 @@ export const main = ($) => {
         {//選択
             const SECTION = document.createElement("section");
             SECTION.classList.add("talents");
-            {//リロード
+
+            talentsToCreate.forEach((talent, i) => {
                 const DIV = document.createElement("div");
                 const LABEL = document.createElement("label");
-                LABEL.textContent = "リロード（Reload）";
+                LABEL.textContent = `${window.florr.database.talentName.JP[talent]}（${window.florr.database.talentName.EN[talent]}）`;
 
                 DIV.appendChild(LABEL);
-                DIV.appendChild(RELOAD);
+                DIV.appendChild(pullDownMenu[i]);
                 SECTION.appendChild(DIV);
-            }
-            {//回復
-                const DIV = document.createElement("div");
-                const LABEL = document.createElement("label");
-                LABEL.textContent = "回復（Medic）";
-
-                DIV.appendChild(LABEL);
-                DIV.appendChild(MEDIC);
-                SECTION.appendChild(DIV);
-            }
-            {//Duplicator
-                const DIV = document.createElement("div");
-                const LABEL = document.createElement("label");
-                LABEL.textContent = "複製機（Duplicator）";
-
-                DIV.appendChild(LABEL);
-                DIV.appendChild(DUPLICATOR);
-                SECTION.appendChild(DIV);
-            }
-            {//Poison
-                const DIV = document.createElement("div");
-                const LABEL = document.createElement("label");
-                LABEL.textContent = "毒（Poison）";
-
-                DIV.appendChild(LABEL);
-                DIV.appendChild(POISON);
-                SECTION.appendChild(DIV);
-            }
-
-            {//Concentrated Poison
-                const DIV = document.createElement("div");
-                const LABEL = document.createElement("label");
-                LABEL.textContent = "濃縮された毒（Concentrated poison）";
-
-                DIV.appendChild(LABEL);
-                DIV.appendChild(CPOISON);
-                SECTION.appendChild(DIV);
-            }
+            });
             TABLE.before(SECTION);
         }
         {//プルダウンメニュー化
@@ -473,11 +393,7 @@ export const main = ($) => {
                 TALENTS_FACTOR[talentName] = TALENTS_FACTOR_DEFAULT[talentName] + (TALENTS_VAL[talentName][v] ?? 0);
                 TABLE.updateWhole();
             }
-            pulldownMenufy(RELOAD, v => updateTable("reload", v));
-            pulldownMenufy(MEDIC, v => updateTable("medic", v));
-            pulldownMenufy(DUPLICATOR, v => updateTable("duplicator", v));
-            pulldownMenufy(POISON, v => updateTable("poison", v));
-            pulldownMenufy(CPOISON, v => updateTable("CPoison", v));
+            talentsToCreate.forEach((talent, i) => pulldownMenufy(pullDownMenu[i], v => updateTable(talent, v)));
         }
     }
 }

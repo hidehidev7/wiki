@@ -120,13 +120,46 @@ florr.database = {//ペタル、モブ関連のデータ
         luck: 0,
         pHealth: 1,
     },
-    //それぞれのレアリティにおけるオリジナル値への加算値
+    //選択可能なTalentの獲得レアリティ
+    talentRarity: {
+        reload: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        medic: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        duplicator: [0, 4, 6],
+        poison: [0, 1, 2, 2, 2, 2, 2, 2, 2],
+        CPoison: [6],
+        summoner: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        luck: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+        pHealth: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+    },
+    talentName: {
+        JP: {
+            reload: "再生成",
+            medic: "医者",
+            duplicator: "複製",
+            poison: "毒",
+            CPoison: "凝縮された毒",
+            summoner: "召喚士",
+            luck: "運",
+            pHealth: "花びら体力",
+        },
+        EN: {
+            reload: "Reload",
+            medic: "Medic",
+            duplicator: "Duplicator",
+            poison: "Poison",
+            CPoison: "Contentrated Poison",
+            summoner: "Summoner",
+            luck: "Luck",
+            pHealth: "Petal Health",
+        }
+    },
+    //上の対応するtalentRarityにおけるオリジナル値への加算値
     talentFactor: {
         reload: [-0.10, -0.19, -0.271, -0.344, -0.475, -0.58, -0.664, -0.731, -0.812],
         medic: [0.15, 0.322, 0.521, 0.749, 1.011, 1.313, 1.66, 2.059, 3.046],
-        duplicator: [0, 0, 0, 0, 1, 1, 2, 2, 2],
+        duplicator: [0, 1, 2],
         poison: [0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625],
-        CPoison: [0, 0, 0, 0, 0, 0, -0.167777],
+        CPoison: [-0.167777],
         summoner: [0.15, 0.322, 0.521, 0.749, 1.011, 1.313, 1.66, 2.059, 3.046],
         luck: [0.1, 0.25, 0.45, 0.7, 1, 1.35, 1.75, 2.2, 2.7],
         pHealth: [0.15, 0.322, 0.521, 0.749, 1.011, 1.313, 1.66, 2.059, 3.046],
