@@ -355,17 +355,25 @@ export const main = ($) => {
     insertTableBeforeOriginId(TABLE, $.originId);
 
     {//タレント選択機能
-        const host = new PulldownMenufyHost();
-        const DEFAULT_LABEL_NONE = host.DEFAULT_LABEL_NONE;
-        const DEFAULT_LABEL = host.DEFAULT_LABEL;
-        const createPullDownMenu = host.createPullDownMenu;
-        const pulldownMenufy = host.pulldownMenufy;
+        const { DEFAULT_LABEL_NONE, createDefaultLabel, createPullDownMenu, pulldownMenufy } = new PulldownMenufyHost();
 
         const talentsToCreate = ["reload", "medic", "duplicator", "poison", "CPoison", "summoner", "luck", "pHealth"];
 
         const pullDownMenu = talentsToCreate.map(talent => {
             const rarities = window.florr.database.talentRarity[talent];
-            const labels = [DEFAULT_LABEL_NONE, ...rarities.map(r => DEFAULT_LABEL[r])];
+            let lastRarity = -1;
+            let streak = 1;
+            const labels = [DEFAULT_LABEL_NONE, ...rarities.map((r, i) => {
+                const labelObj = createDefaultLabel(r, i);
+                if (r == lastRarity) {
+                    return { ...labelObj, label: `${labelObj.label} ${++streak}`};
+                }
+                else {
+                    lastRarity = r;
+                    streak = 1;
+                    return labelObj;
+                }
+            })];
             return createPullDownMenu(labels);
         });
 

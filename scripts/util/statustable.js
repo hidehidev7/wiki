@@ -466,68 +466,15 @@ export const PulldownMenufyHost = class {
         backgroundColor: "var(--c-gray_dark)",
     }
 
-    DEFAULT_LABEL = [
-        {
-            label: "Common",
-            value: 0,
-            color: window.florr.rarity.color.text["Cm"],
-            backgroundColor: window.florr.rarity.color.background["Cm"]
-        },
-        {
-            label: "Unusual",
-            value: 1,
-            color: window.florr.rarity.color.text["Un"],
-            backgroundColor: window.florr.rarity.color.background["Un"]
-        },
-        {
-            label: "Rare",
-            value: 2,
-            color: window.florr.rarity.color.text["Re"],
-            backgroundColor: window.florr.rarity.color.background["Re"]
-        },
-        {
-            label: "Epic",
-            value: 3,
-            color: window.florr.rarity.color.text["Ep"],
-            backgroundColor: window.florr.rarity.color.background["Ep"]
-        },
-        {
-            label: "Legendary",
-            value: 4,
-            color: window.florr.rarity.color.text["Lg"],
-            backgroundColor: window.florr.rarity.color.background["Lg"]
-        },
-        {
-            label: "Mythic",
-            value: 5,
-            color: window.florr.rarity.color.text["My"],
-            backgroundColor: window.florr.rarity.color.background["My"]
-        },
-        {
-            label: "Ultra",
-            value: 6,
-            color: window.florr.rarity.color.text["Ul"],
-            backgroundColor: window.florr.rarity.color.background["Ul"]
-        },
-        {
-            label: "Super",
-            value: 7,
-            color: window.florr.rarity.color.text["Sp"],
-            backgroundColor: window.florr.rarity.color.background["Sp"]
-        },
-        {
-            label: "Unique",
-            value: 8,
-            color: window.florr.rarity.color.text["Uq"],
-            backgroundColor: window.florr.rarity.color.background["Uq"]
-        },
-        {
-            label: "Eternal",
-            value: 9,
-            color: window.florr.rarity.color.text["Et"],
-            backgroundColor: window.florr.rarity.color.background["Et"]
-        },
-    ]
+    createDefaultLabel(rarityNum, value) {
+        const id = florr.rarity.id[rarityNum];
+        return {
+            label: florr.rarity.name[id],
+            color: florr.rarity.color.text[id],
+            value,
+            backgroundColor: florr.rarity.color.background[id],
+        };
+    }
 
     createPullDownMenu = (options = []) => {//プルダウンメニュー用の要素を作成
         const UL = document.createElement("ul");
