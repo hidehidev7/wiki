@@ -247,6 +247,9 @@ const Field = class {
                 case "CPoison":
                     value = calced[rID] * this.talentsFactor[this.relatedTalent];
                     break;
+                case "pHealth":
+                    value = calced[rID] * this.talentsFactor[this.relatedTalent];
+                    break;
                 case "duplicator":
                     if (calced[rID] >= 2) {
                         value = calced[rID] + this.talentsFactor.duplicator;
