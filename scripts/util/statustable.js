@@ -246,6 +246,8 @@ const Field = class {
                 case "medic":
                 case "poison":
                 case "CPoison":
+                case "luck":
+                case "summoner":
                     value = calced[rID] * this.talentsFactor[this.relatedTalent];
                     break;
                 case "pHealth":
