@@ -33,7 +33,7 @@ const convertSpecialStatusInto = function (options) {
     Fopts.magnification = options.magnification;
     if (options.type == "rarity") Fopts.uniqueDatas = options.uniqueDatas ?? options.uniqueRarityNumbers; //後方互換
     if (options.type == "unique") Fopts.uniqueDatas = options.uniqueDatas;
-    Fopts.relatedTalent == options.relatedTalent;
+    Fopts.relatedTalent = options.relatedTalent;
     Fopts.baseFieldId = options.baseFieldId;
     Fopts.secondBaseFieldId = options.secondBaseFieldId;
 
