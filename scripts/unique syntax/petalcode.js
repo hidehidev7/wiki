@@ -365,14 +365,20 @@ export const main = ($) => {
             let streak = 1;
             const labels = [DEFAULT_LABEL_NONE, ...rarities.map((r, i) => {
                 const labelObj = createDefaultLabel(r, i);
-                if (r == lastRarity) {
-                    return { ...labelObj, label: `${labelObj.label} ${++streak}`};
+                switch(talent) {
+                    case "poison":
+                        if (r != lastRarity) {
+                            lastRarity = r;
+                            streak = 1;
+                        } else streak++;
+                        if (streak > 1) labelObj.label += ` ${streak}`;
+                        break;
+                    case "luck":
+                        labelObj.label += ` (+${window.florr.database.talentFactor[talent][i]})`;
+                        break;
                 }
-                else {
-                    lastRarity = r;
-                    streak = 1;
-                    return labelObj;
-                }
+                return labelObj;
+
             })];
             return createPullDownMenu(labels);
         });
