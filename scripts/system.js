@@ -81,6 +81,7 @@ export const load = (json, type) => {
     const loadByFncName = (funcName = "", property = {}) => {
         switch (type) {
             case "general":
+            case "external":
                 runScript({
                     property,
                     type,
@@ -106,15 +107,6 @@ export const load = (json, type) => {
                     });
                 }
                 break;
-            case "external":
-                runScript({
-                    property,
-                    type,
-                    funcName,
-                    text: ""
-                });
-                break;
-
             default:
                 break;
         }
