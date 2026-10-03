@@ -17,6 +17,7 @@ const CONFIG = await (async () => {
     load(CONFIG, "general");
     load(CONFIG, "unique syntax");
     load(CONFIG, "external");
+    load(CONFIG, "user script");
 }
 
 _();

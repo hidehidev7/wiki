@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="module">
+
+import { load } from "/scripts/system.js";
+
+function setConfigURL(config, url) {
+  for(const type in config) {
+    for(const name in config[type]) {
+      config[type][name].url = url;
+    }
+  }
+}
+
+window.loadAsUsual = async function() {
+  const configResponse = await fetch("/scripts/config.json");
+  const config = await configResponse.json();
+
+  config.rootPath = "/";
+
+  for(const type in config) load(config, type);
+};
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

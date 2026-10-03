@@ -63,5 +63,11 @@
             }
         }
     },
+    "user script": {
+        "mimicgame": {
+            "pages": ["%E3%83%9A%E3%82%BF%E3%83%AB%E5%9B%B3%E9%91%91"],
+            "arg": {}
+        }
+    },
     "external": {}
 }
