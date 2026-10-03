@@ -77,7 +77,7 @@ const runScript = (o = {}) => {
 
     runFromPath(data.url, data.arg);
 }
-const load = (json, type) => {
+export const load = (json, type) => {
     const loadByFncName = (funcName = "", property = {}) => {
         switch (type) {
             case "general":
@@ -124,27 +124,9 @@ const load = (json, type) => {
     SCRIPTS.forEach(n => loadByFncName(n, json[type][n]));
 }
 
-const CONFIG = await (async () => {
-    try {
-        const REQ = await fetch("https://hidehidev7.github.io/wiki/scripts/config.json")
-        const RES = await REQ.json();
-
-        console.log("config.jsonが読み込まれました。", RES);
-
-        return RES;
-    } catch (error) {
-        console.log("config.jsonの読み込みに失敗しました。", error)
-    }
-})();
-
-{
-    load(CONFIG, "general");
-    load(CONFIG, "unique syntax");
-    load(CONFIG, "external");
-}
 
 //???
-(() => {
+export const _ = () => {
     const nf9348 = "data:image/png;base64,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";
     (() => {
         function async_digestMessage(message) {
@@ -200,4 +182,4 @@ const CONFIG = await (async () => {
         );
         console.log("\u30b3\u30f3\u30bd\u30fc\u30eb\u3078\u3088\u3046\u3053\u305d\uff01");
     }
-})();
+}
