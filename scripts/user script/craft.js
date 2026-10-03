@@ -1,4 +1,6 @@
-const elm = document.getElementByClassName("elm")[0];
+'use strict'
+
+const elm = document.querySelector(".usercode");
 const cvs = document.createElement("canvas");
 elm.appendChild(cvs);
 const ctx = cvs.getContext("2d");
