@@ -1,6 +1,6 @@
 "use strict";
 
-const elm = document.querySelector(".canvas");
+const elm = document.querySelector(".usercode");
 const canvas = document.createElement("canvas");
 elm.appendChild(canvas)
 const ctx = canvas.getContext("2d");
