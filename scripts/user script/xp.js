@@ -1,4 +1,4 @@
-const elm = document.querySelector(".code");
+const elm = document.querySelector(".usercode");
 const labelElm = document.createElement("label");
 labelElm.textContent = "レベル:";
 labelElm.htmlFor = "level";
