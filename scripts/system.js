@@ -60,7 +60,7 @@ const getArg = (text = "", type = "") => {
             return undefined;
     }
 }
-const runScript = (o = {}) => {
+const runScript = (o = {}, rootPath) => {
     let data = {
         url: "",
         arg: {}
@@ -69,7 +69,7 @@ const runScript = (o = {}) => {
     if (o.property.url) {
         data.url = o.property.url
     } else {
-        data.url = `https://hidehidev7.github.io/wiki/scripts/${o.type}/${o.funcName}.js`;
+        data.url = `${rootPath}scripts/${o.type}/${o.funcName}.js`;
     }
 
     if (o.property.arg.options) data.arg.options = getArg(o.text, o.property.arg.options);
@@ -79,6 +79,7 @@ const runScript = (o = {}) => {
 }
 export const load = (json, type) => {
     const loadByFncName = (funcName = "", property = {}) => {
+        const rootPath = json.rootPath ?? "https://hidehidev7.github.io/wiki/";
         switch (type) {
             case "general":
             case "external":
@@ -87,7 +88,7 @@ export const load = (json, type) => {
                     type,
                     funcName,
                     text: ""
-                });
+                }, rootPath);
                 break;
             case "unique syntax":
                 const SYNTAX = document.querySelectorAll(`.user_body span.${funcName}`);
@@ -104,7 +105,7 @@ export const load = (json, type) => {
                         funcName,
                         text: SPAN.textContent,
                         id: ID
-                    });
+                    }, rootPath);
                 }
                 break;
             default:
