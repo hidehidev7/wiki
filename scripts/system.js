@@ -108,6 +108,20 @@ export const load = (json, type) => {
                     }, rootPath);
                 }
                 break;
+            case "user script": {
+                // const pageNames = window.location.pathname.match(/(?<=\/wiki\/).*/);
+                // if(!pageNames) break;
+                // const pageName = pageNames[0];
+                if(true/*property.pages && property.pages.includes(pageName)*/) {
+                    runScript({
+                        property,
+                        type,
+                        funcName,
+                        text: ""
+                    }, rootPath);
+                }
+                break;
+            }
             default:
                 break;
         }
