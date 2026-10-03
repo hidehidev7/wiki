@@ -81,7 +81,7 @@
             "arg": {}
         },
         "xp": {
-            "pages: ["経験値"],
+            "pages": ["経験値"],
             "arg": {}
         },
         "drawDice": {
