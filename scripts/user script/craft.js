@@ -3,7 +3,7 @@
 export function main() {
 
 const elm = document.querySelector(".usercode");
-const cvs = document.createElement("canvas");
+const cvs = document.getElementById("canvas");
 elm.appendChild(cvs);
 const ctx = cvs.getContext("2d");
 let x = 360;
@@ -221,10 +221,10 @@ window.onresize = function () {
   resize();
 }
 function resize() {
-    canvas.width = canvasSize.w * window.devicePixelRatio;
-    canvas.height = canvasSize.h * window.devicePixelRatio;
-    canvas.style.width = canvasSize.w + "px";
-    canvas.style.height = canvasSize.h + "px";
+    cvs.width = canvasSize.w * window.devicePixelRatio;
+    cvs.height = canvasSize.h * window.devicePixelRatio;
+    cvs.style.width = canvasSize.w + "px";
+    cvs.style.height = canvasSize.h + "px";
     y = cvs.height / 2;
 }
 function drawbtn(x, y, w, h) {
