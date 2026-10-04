@@ -1,5 +1,7 @@
 'use strict'
 
+export function main() {
+
 const elm = document.querySelector(".usercode");
 const canvas = document.createElement("canvas");
 elm.appendChild(canvas);
@@ -29,7 +31,8 @@ window.onload = function () {
   document.body.addEventListener("mousemove", (e) => {
        angle = Math.atan2((e.pageX - window.pageXOffset - canvas.getBoundingClientRect().x) * window.devicePixelRatio - center.x, -((e.pageY - window.pageYOffset - canvas.getBoundingClientRect().y) * window.devicePixelRatio - center.y));
    });
-} class Bubble {
+}
+class Bubble {
   constructor(angle, reload, lifeTime) {
        this.size = 0;
        this.alpha = 1;
@@ -169,3 +172,5 @@ function mainloop() {
 for (let i = 0; i < 8; i++) {
   bubble.push(new Bubble((Math.PI / 4) * i, reload[i][0], reload[i][1]));
 } mainloop();
+
+}

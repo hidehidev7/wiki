@@ -290,7 +290,7 @@ const createLoadButton = o => {
 
     return undefined;
 }
-const main = async pageType => {//メインの動作
+const innerMain = async pageType => {//メインの動作
     {//読込み中の表示
         const PARENT = document.getElementById(pageType).getElementsByTagName("tbody")[0];
         const TR = document.createElement("tr");
@@ -384,6 +384,8 @@ const main = async pageType => {//メインの動作
     }
 }
 
-main("petal");
-main("mob");
-main("map");
+export function main() {
+    innerMain("petal");
+    innerMain("mob");
+    innerMain("map");
+}

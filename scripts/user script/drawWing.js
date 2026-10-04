@@ -1,5 +1,7 @@
 "use strict";
 
+export function main() {
+
 const elm = document.querySelector(".usercode");
 const canvas = document.createElement("canvas");
 elm.appendChild(canvas)
@@ -54,3 +56,5 @@ function mainloop() {
 }
 
 mainloop();
+
+}

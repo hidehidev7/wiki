@@ -1,5 +1,7 @@
 'use strict'
 
+export function main() {
+
 const elm = document.querySelector(".usercode");
 const cvs = document.createElement("canvas");
 elm.appendChild(cvs);
@@ -331,3 +333,5 @@ function mainloop() {
    requestAnimationFrame(mainloop);
 } setPetals();
 mainloop();
+
+}

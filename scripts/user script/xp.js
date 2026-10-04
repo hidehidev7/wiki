@@ -1,3 +1,5 @@
+export function main() {
+
 const elm = document.querySelector(".usercode");
 const labelElm = document.createElement("label");
 labelElm.textContent = "レベル:";
@@ -76,3 +78,5 @@ function calcTotalRequiredXPForLevel(level) {
   levelElement.addEventListener("input", update);
 	update();
 })();
+
+}

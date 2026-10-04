@@ -1,5 +1,7 @@
 'use strict'
 
+export function main() {
+
  const element = document.getElementById("mobhealthfactor");
  const factorArr = window.florr.database.mobHealthFactor;
  console.log(window.florr.rarity);
@@ -8,3 +10,5 @@
    cell.textContent = `${ window.florr.rarity.name[window.florr.rarity.id[rID.toString()]] } : ${factor}`;
    element.appendChild(cell);
  });
+
+}
