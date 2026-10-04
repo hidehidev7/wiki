@@ -95,6 +95,10 @@
         "drawWing": {
             "pages": ["Wing"],
             "arg": {}
+        },
+        "plinko": {
+            "pages": ["Plinko"],
+            "arg": {}
         }
     },
     "external": {}
