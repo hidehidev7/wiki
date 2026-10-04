@@ -18,6 +18,9 @@
         "usercode": {
             "arg": {}
         },
+        "userscript": {
+            "arg": {}
+        },
         "wikiEditorAddon": {
             "arg": {}
         },
