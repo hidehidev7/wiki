@@ -12,7 +12,7 @@ const totalRqXp = document.createElement("span");
 totalRqXp.id = "total-required-xp";
 const rqXp = document.createElement("span");
 rqXp.id = "required-xp";
-const elms = [inputelm, totalRqXp, rqXp];
+const elms = [inputElm, totalRqXp, rqXp];
 for (let i of elms) {
 elm.appendChild(i);
 }
