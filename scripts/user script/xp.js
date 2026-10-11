@@ -1,6 +1,7 @@
 export function main() {
 
-const elm = document.querySelector(".usercode");
+const elm = document.getElementById("usercodecalc");
+if(!elm) throw "エラー: #usercodecalcが見つかりませんでした";
 const labelElm = document.createElement("label");
 labelElm.textContent = "レベル:";
 labelElm.htmlFor = "level";

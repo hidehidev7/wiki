@@ -2,7 +2,8 @@
 
 export function main() {
 
-const elm = document.querySelector(".usercode");
+const elm = document.getElementById("usercodecanvas");
+if(!elm) throw "エラー: #usercodecanvasが見つかりませんでした";
 const canvas = document.createElement("canvas");
 elm.appendChild(canvas)
 const ctx = canvas.getContext("2d");
