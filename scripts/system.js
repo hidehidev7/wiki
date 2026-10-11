@@ -8,7 +8,7 @@ florr.io JPwiki 総合管理システム
 
 
 import { florr } from "https://hidehidev7.github.io/wiki/scripts/data.js"
-import { getDecodedPageName } from "/scripts/util/util.js";
+import { getDecodedPageName } from "https://hidehidev7.github.io/wiki/scripts/util/util.js";
 
 
 window.florr = florr;
