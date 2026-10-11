@@ -70,6 +70,10 @@
         }
     },
     "user script": {
+        "removeJSAlert": {
+            "pages": ["トップページ"],
+            "arg": {}
+        },
         "mimicgame": {
             "pages": ["ペタル図鑑"],
             "arg": {}
