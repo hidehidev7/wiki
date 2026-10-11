@@ -8,6 +8,7 @@ florr.io JPwiki 総合管理システム
 
 
 import { florr } from "https://hidehidev7.github.io/wiki/scripts/data.js"
+import { getDecodedPageName } from "./util/util";
 
 
 window.florr = florr;
@@ -109,10 +110,8 @@ export const load = (json, type) => {
                 }
                 break;
             case "user script": {
-                const pageNames = window.location.pathname.match(/(?<=\/wiki\/).*/);
-                if(!pageNames) break;
-                const pageName = pageNames[0];
-                if(property.pages && property.pages.includes(pageName)) {
+                const pageName = getDecodedPageName();
+                if(pageName && property.pages && property.pages.includes(pageName)) {
                     runScript({
                         property,
                         type,
