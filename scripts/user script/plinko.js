@@ -3,6 +3,8 @@
 export function main() {
 
     const container = document.getElementById("usercodecanvas");
+    if(!container) throw "エラー: #usercodecanvasが見つかりませんでした";
+
     const canvas = document.createElement("canvas");
     container.appendChild(canvas);
     const ctx = canvas.getContext("2d");
