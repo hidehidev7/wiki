@@ -1,0 +1,28 @@
+@keyframes topimg {
+  0% {
+    background-position-y: 0%;
+  }
+  50% {
+    background-position-y: 100%;
+  }
+  100% {
+    background-position-y: 0%;
+  }
+}
+
+#titleimg {
+  width: 100%;
+  border: var(--mlt-box_border);
+  box-sizing: border-box;
+  border-radius: var(--val-main_border-radius);
+  position: relative;
+}
+
+#titleimg img {
+  width: 100%;
+}
+
+.content {
+  padding: 1.5em;
+  background-color: #4dba81;
+}
