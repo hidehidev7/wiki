@@ -2,7 +2,9 @@
 
 export function main() {
 
-    const canvas = document.getElementById("canvas");
+    const container = document.getElementById("usercodecanvas");
+    const canvas = document.createElement("canvas");
+    container.appendChild(canvas);
     const ctx = canvas.getContext("2d");
     const UPDATE_LOAD_COEFF = 0.5;
     let targetInterval = 1000 / 60;
