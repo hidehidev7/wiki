@@ -6,6 +6,9 @@
         "arrangeForMobile": {
             "arg": {}
         },
+        "individualStyle": {
+            "arg": {}
+        },
         "loadSVG": {
             "arg": {}
         },
