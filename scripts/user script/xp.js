@@ -2,21 +2,11 @@ export function main() {
 
 const elm = document.getElementById("usercodecalc");
 if(!elm) throw "エラー: #usercodecalcが見つかりませんでした";
-const labelElm = document.createElement("label");
-labelElm.textContent = "レベル:";
-labelElm.htmlFor = "level";
-const inputElm = document.createElement("input");
-inputElm.type = "number";
-inputElm.value = 1;
-inputElm.id = "level"
-const totalRqXp = document.createElement("span");
-totalRqXp.id = "total-required-xp";
-const rqXp = document.createElement("span");
-rqXp.id = "required-xp";
-const elms = [inputElm, totalRqXp, rqXp];
-for (let i of elms) {
-elm.appendChild(i);
-}
+elm.innerHTML = `<p>
+	<label for="level">レベル：</label><input type="value" id="level" value="1">
+</p>
+<p>累計必要経験値：<span id="total-required-xp"></span></p>
+<p>次のレベルに必要な経験値：<span id="required-xp"></span></p>`;
 
 const units = [undefined, "k", "m", "b", "t", "qa", "qi", "sx", "sp", "oc", "no", "dc", "ud", "dd", "td", "qua", "qid", "sxd", "spd", "ocd", "nod", "vg", "uvg", "dvg", "tvg", "qavg", "qivg", "scvg", "spvg", "ocvg", "novg"];
 function formatNumber(number) {
