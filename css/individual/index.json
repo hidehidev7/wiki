@@ -1,6 +1,7 @@
 {
     "pages": {
         "トップページ" : "toppage",
-        "ペタル・モブ・マップ画像一覧" : "viewImageList"
+        "ペタル・モブ・マップ画像一覧" : "viewImageList",
+        "デモページ" : "fontDemo"
     }
 }
