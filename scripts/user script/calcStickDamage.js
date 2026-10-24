@@ -1,6 +1,16 @@
 const STalent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10];
 const SMulti = 1.15
 
+/**
+ * @param { HTMLTableRowElement } row
+ * @param { string } text
+*/
+function addLeftTHCell(row, text) {
+    const th = document.createElement("th");
+    th.textContent = text;
+    row.appendChild(th);
+}
+
 function createTable(array, containerId) {
     const Rarity = ["なし", "Cm", "Un", "Re", "Ep", "Lg", "My", "Ul", "Sp", "Uq"];
     const cCount = Rarity.length;
@@ -10,6 +20,7 @@ function createTable(array, containerId) {
     const tbody = document.createElement("tbody");
 
     const headerRow = document.createElement("tr");
+    addLeftTHCell(headerRow, "Summoner");
     for (let i = 0; i < cCount; i++) {
         const th = document.createElement("th");
         th.textContent = Rarity[i];
@@ -18,6 +29,7 @@ function createTable(array, containerId) {
     thead.appendChild(headerRow);
 
     const dataRow = document.createElement("tr");
+    addLeftTHCell(dataRow, "ダメージ");
     for (let i = 0; i < cCount; i++) {
         const td = document.createElement("td");
         td.textContent = array[i] ?? "-";
@@ -68,7 +80,7 @@ export const main = () => {
     const wrapper = document.getElementById("stickDamageCalculator");
     if (!wrapper) return;
 
-    wrapper.innerHTML =   `<label>Stickレアリティ<select id="PetalRarity">
+    wrapper.innerHTML = `<label>Stickレアリティ<select id="PetalRarity">
 <option value="3">Epic</option>
 <option value="4">Legendary</option>
 <option value="5">Mythic</option>
