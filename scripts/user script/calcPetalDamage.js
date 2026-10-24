@@ -75,7 +75,7 @@ function calcDamage() {
 }
 
 export const main = () => {
-  const wrapper = document.getElementById("petal-damage-calculator");
+  const wrapper = document.getElementById("petalDamageCalculator");
   if (!wrapper) return;
 
   wrapper.innerHTML = `
