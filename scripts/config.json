@@ -117,6 +117,10 @@
         "calcPetalDamage": {
             "pages": ["ペタルダメージ計算", "Bone"],
             "arg": {}
+        },
+        "calcStickDamage": {
+            "pages": ["Stickダメージ計算", "Stick"],
+            "arg": {}
         }
     },
     "external": {}
