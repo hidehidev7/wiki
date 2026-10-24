@@ -1,6 +1,16 @@
 const PHTalent = [0, 1, 2, 3, 4, 5, 6, 7, 8, 10];
 const PHMulti = 1.15;
 
+/**
+ * @param { HTMLTableRowElement } row
+ * @param { string } text
+*/
+function addLeftTHCell(row, text) {
+  const th = document.createElement("th");
+  th.textContent = text;
+  row.appendChild(th);
+}
+
 function createTable(array, containerId, hitsArray) {
   const Rarity = ["なし", "Cm", "Un", "Re", "Ep", "Lg", "My", "Ul", "Sp", "Uq"];
   const cCount = Rarity.length;
@@ -10,6 +20,7 @@ function createTable(array, containerId, hitsArray) {
   const tbody = document.createElement("tbody");
 
   const headerRow = document.createElement("tr");
+  addLeftTHCell(headerRow, "Petal Health");
   for (let i = 0; i < cCount; i++) {
     const th = document.createElement("th");
     th.textContent = Rarity[i];
@@ -18,6 +29,7 @@ function createTable(array, containerId, hitsArray) {
   thead.appendChild(headerRow);
 
   const hitRow = document.createElement("tr");
+  addLeftTHCell(hitRow, "ヒット数");
   for (let i = 0; i < cCount; i++) {
     const td = document.createElement("td");
     const content = (hitsArray[i] ?? "-") + " hits"
@@ -27,6 +39,7 @@ function createTable(array, containerId, hitsArray) {
   tbody.appendChild(hitRow);
 
   const dataRow = document.createElement("tr");
+  addLeftTHCell(dataRow, "ダメージ");
   for (let i = 0; i < cCount; i++) {
     const td = document.createElement("td");
     td.textContent = array[i] ?? "-";
