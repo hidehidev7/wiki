@@ -2,6 +2,7 @@
     "pages": {
         "トップページ" : "toppage",
         "ペタル・モブ・マップ画像一覧" : "viewImageList",
-        "デモページ" : "fontDemo"
+        "デモページ" : "fontDemo",
+        "タレント": "talentTree"
     }
 }

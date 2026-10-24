@@ -121,6 +121,10 @@
         "calcStickDamage": {
             "pages": ["Stickダメージ計算", "Mysterious Stick"],
             "arg": {}
+        },
+        "talentTree": {
+            "pages": ["タレント"],
+            "arg": {}
         }
     },
     "external": {}
