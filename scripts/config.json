@@ -119,7 +119,7 @@
             "arg": {}
         },
         "calcStickDamage": {
-            "pages": ["Stickダメージ計算", "Stick"],
+            "pages": ["Stickダメージ計算", "Mysterious Stick"],
             "arg": {}
         }
     },
