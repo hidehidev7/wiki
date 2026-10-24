@@ -109,6 +109,10 @@
         "plinko": {
             "pages": ["Plinko"],
             "arg": {}
+        },
+        "viewImageList": {
+            "pages": ["ペタル・モブ・マップ画像一覧"],
+            "arg": {}
         }
     },
     "external": {}

@@ -1,5 +1,6 @@
 {
     "pages": {
-        "トップページ" : "toppage"
+        "トップページ" : "toppage",
+        "ペタル・モブ・マップ画像一覧" : "viewImageList"
     }
 }
