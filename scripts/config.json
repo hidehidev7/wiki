@@ -113,6 +113,10 @@
         "viewImageList": {
             "pages": ["ペタル・モブ・マップ画像一覧"],
             "arg": {}
+        },
+        "calcPetalDamage": {
+            "pages": ["ペタルダメージ計算", "Bone"],
+            "arg": {}
         }
     },
     "external": {}
