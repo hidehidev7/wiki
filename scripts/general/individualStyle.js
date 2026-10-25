@@ -11,7 +11,7 @@ export const main = async () => {
     /** @type {string | string[]} */ const nameData = index.pages[page];
     const fileNames = typeof nameData === "string" ? [nameData] : nameData;
     for(const fileName of fileNames) {
-        const cssData = await fetch(PROD_ROOT_PATH + `./../../css/individual/${fileName}.css`);
+        const cssData = await fetch(PROD_ROOT_PATH + `css/individual/${fileName}.css`);
         const cssText = await cssData.text();
 
         const stylesheet = document.createElement("style");
