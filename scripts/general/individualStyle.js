@@ -1,7 +1,7 @@
-import { getDecodedPageName } from "https://hidehidev7.github.io/wiki/scripts/util/document.js";
+import { getDecodedPageName } from "./../util/document.js";
 
 export const main = async () => {
-    const data = await fetch("https://hidehidev7.github.io/wiki/css/individual/index.json");
+    const data = await fetch("./../../css/individual/index.json");
     const index = await data.json();
     const page = getDecodedPageName();
 
@@ -10,7 +10,7 @@ export const main = async () => {
     /** @type {string | string[]} */ const nameData = index.pages[page];
     const fileNames = typeof nameData === "string" ? [nameData] : nameData;
     for(const fileName of fileNames) {
-        const cssData = await fetch(`https://hidehidev7.github.io/wiki/css/individual/${fileName}.css`);
+        const cssData = await fetch(`./../../css/individual/${fileName}.css`);
         const cssText = await cssData.text();
 
         const stylesheet = document.createElement("style");

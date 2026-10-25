@@ -2,7 +2,7 @@ import { load, _ } from "./system.js";
 
 const CONFIG = await (async () => {
     try {
-        const REQ = await fetch("https://hidehidev7.github.io/wiki/scripts/config.json")
+        const REQ = await fetch("./config.json")
         const RES = await REQ.json();
 
         console.log("config.jsonが読み込まれました。", RES);
