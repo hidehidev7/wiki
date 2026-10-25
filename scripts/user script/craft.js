@@ -1,10 +1,9 @@
 'use strict'
 
 export function main() {
-
     const elm = document.getElementById("usercodecanvas");
     if (!elm) throw "エラー: #usercodecanvasが見つかりませんでした";
-    const cvs = document.getElementById("canvas");
+    const cvs = document.createElement("canvas");
     elm.appendChild(cvs);
     const ctx = cvs.getContext("2d");
     let x = 360;
