@@ -21,6 +21,8 @@
     │   └── ...
     ├── unique syntax/
     │   └── ...
+    ├── user script/
+    │   └── ...
     ├── util/
     │   └── ...
     └── config.json
@@ -32,6 +34,8 @@
         <dd>既定で実行される関数群</dd>
     <dt>unique syntax</dt>
         <dd>特殊構文が呼び出されたときに実行される関数群</dd>
+    <dt>user script</dt>
+        <dd>特定のページにおいてのみ実行される関数群</dd>
     <dt>util</dt>
         <dd>他のスクリプトの一部がインポートする関数群</dd>
 </dl>
