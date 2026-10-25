@@ -129,6 +129,10 @@
         "calcDPS": {
             "pages": ["DPS計算"],
             "arg": {}
+        },
+        "calcCraftChance": {
+            "pages": ["クラフト確率計算", "クラフト"],
+            "arg": {}
         }
     },
     "external": {}
