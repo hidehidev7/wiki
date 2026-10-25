@@ -1,4 +1,4 @@
-import { getDecodedPageName } from "https://hidehidev7.github.io/wiki/scripts/util/util.js";
+import { getDecodedPageName } from "https://hidehidev7.github.io/wiki/scripts/util/document.js";
 
 export const main = async () => {
     const data = await fetch("https://hidehidev7.github.io/wiki/css/individual/index.json");
