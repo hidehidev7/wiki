@@ -3,6 +3,7 @@
         "トップページ" : "toppage",
         "ペタル・モブ・マップ画像一覧" : "viewImageList",
         "デモページ" : "fontDemo",
-        "タレント": "talentTree"
+        "タレント": "talentTree",
+        "DPS計算": "userscript_calcDPS"
     }
 }

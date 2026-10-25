@@ -125,6 +125,10 @@
         "talentTree": {
             "pages": ["タレント"],
             "arg": {}
+        },
+        "calcDPS": {
+            "pages": ["DPS計算"],
+            "arg": {}
         }
     },
     "external": {}

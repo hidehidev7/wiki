@@ -1,0 +1,46 @@
+.florr-img-button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 8px;
+  cursor: pointer;
+  transition: transform 0.15s ease-out;
+  display: inline-block;
+}
+
+.florr-img-button img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+.florr-img-button:active img {
+  transform: scale(0.85);
+}
+
+.selected-petal {
+  position: relative;
+  margin: 8px;
+  display: inline-block;
+}
+
+.selected-petal img {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.remove-button {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
