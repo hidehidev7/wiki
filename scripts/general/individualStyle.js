@@ -1,7 +1,8 @@
 import { getDecodedPageName } from "./../util/document.js";
+import { PROD_ROOT_PATH } from "../data.js";
 
 export const main = async () => {
-    const data = await fetch("./../../css/individual/index.json");
+    const data = await fetch(PROD_ROOT_PATH + "css/individual/index.json");
     const index = await data.json();
     const page = getDecodedPageName();
 
@@ -10,7 +11,7 @@ export const main = async () => {
     /** @type {string | string[]} */ const nameData = index.pages[page];
     const fileNames = typeof nameData === "string" ? [nameData] : nameData;
     for(const fileName of fileNames) {
-        const cssData = await fetch(`./../../css/individual/${fileName}.css`);
+        const cssData = await fetch(PROD_ROOT_PATH + `./../../css/individual/${fileName}.css`);
         const cssText = await cssData.text();
 
         const stylesheet = document.createElement("style");

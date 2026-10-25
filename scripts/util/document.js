@@ -1,4 +1,4 @@
 export function getDecodedPageName() {
-    const titleElm = document.querySelector("h1");
+    const titleElm = document.querySelector(".page_title>h1");
     return titleElm && titleElm.textContent;
 }

@@ -169,3 +169,5 @@ florr.database = {//ペタル、モブ関連のデータ
         pHealth: [0.15, 0.322, 0.521, 0.749, 1.011, 1.313, 1.66, 2.059, 3.046],
     },
 }
+
+export const PROD_ROOT_PATH = "https://hidehidev7.github.io/wiki/";
