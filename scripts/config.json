@@ -18,12 +18,6 @@
         "redirectDetector": {
             "arg": {}
         },
-        "usercode": {
-            "arg": {}
-        },
-        "userscript": {
-            "arg": {}
-        },
         "wikiEditorAddon": {
             "arg": {}
         },
